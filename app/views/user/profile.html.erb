@@ -102,44 +102,16 @@
 							<%=f.text_field('casesno')%>	
 							</li> <br><br>
 							</div>
-							
 
 
-
-							
-							
-<!-- 							<li>
-							<%=f.label('Age:')%>	<br>
-							</li>
+							<div>
 							<li>
-							<%=f.text_field('age')%>	<br>
-							</li>
-							
+							<%=render('space')%>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	&nbsp&nbsp&nbsp	
 
-							<li>
-							<%=f.text_field('Email:')%>	<br>
-							</li>
-							<li>
-							<%=f.text_field('email')%>	<br>
-							</li>
+							<%=submit_tag('Save Detail')%>	
 
-							<li>
-							<%=f.label('Experience:')%>	<br>
-							</li>
-							<li>
-							<%=f.text_field('experiance')%>	<br>
-							</li>
-
-							 <li>
-							<%=f.label('No of Cases:')%>	<br>
-							 </li>
-							 <li>
-							<%=f.text_field('casesno')%>	<br>
-							 </li>
- -->							
-
-
-						</ul>
+							</li> 
+							</div>
 						<% end -%>
 						</div>
 
@@ -149,9 +121,28 @@
 
 				</div>	
 				<div class="casestudy" id="casestudy">
+					<h1>CASE STUDY</h1>
+					<div style="position:absolute;top:150px;">
+					<li><a>Set Reminder</a></li><br><br><br>
+					<li><a>Your Uploads</a></li><br><br><br>
+					<li><a>Your Details</a></li><br><br><br>
+					<li><a id="editor">Web Text Editor</a></li><br><br>
 
+					</div>
+					<div id="showeditor" style="position:absolute; top:350px;left:320px; display:none;">
+					
+						<%=form_tag() do %>
+						<code><%=label_tag(' data:text/html, <html contenteditable>')%></code>
 
+						<%end%>
+
+						<strong style="color:#000;">(Copy and Paste the code in url of page and make browser as online editor click on the page to write <br>
+						Save the file using  <code>ctrl + s</code>)<strong>
+						
+					</div>
 				</div>	
+
+
 
 
 			</div>

@@ -15,13 +15,13 @@
 
 			<!-- LOGIN FORM -->
 
-	<%=form_for(:User,:url=>{:controller=>"lawyer",:action=>"loginuser"}) do |f| -%>
+	<%=form_for(:User,:url=>{:controller=>"lawyer",:action=>"loginuser"}) do  -%>
 		<ul>
-			<li>Username</li>
-			<li><%=f.text_field("username")%></li>
+			<li><%=label_tag('username')%></li>
+			<li><%=text_field_tag("username")%></li>
 		</ul>
 		<ul>
-			<li>Password</li>
+			<li><%=label_tag('password')%></li>
 			<li><%=password_field_tag("password")%></li><br><br>
 			<li><%=submit_tag("Submit")%></li>	
 		</ul>

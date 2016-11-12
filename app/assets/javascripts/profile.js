@@ -30,5 +30,18 @@
 
 $(document).ready(function() {
  	$('.middle').addClass('animated lightSpeedIn');
-	
+
 })
+
+
+
+$(document).ready(function() {
+	$('#editor').click(function() {
+
+		$('#showeditor').toggle(500);
+	})
+
+});
+
+
+

@@ -2,18 +2,14 @@
 <div id="form">
 
 
-	<%=form_tag(:action=>'loginattempt') do %>
-
-	<%=label_tag("username")%>
-	<%=text_field_tag("username")%><br>
-	<%=label_tag("password")%>
-	<%=password_field_tag("password")%>
-	<%=submit_tag("Submit")%>
-
-
-	<%end%>		  
-
-
+ <%=form_for(:User,:url=>{:controller=>"acess",:action=>"loginattempt"}) do  -%>
+ 	<%=label_tag("username")%>
+ 	<%=text_field_tag("username")%>
+ 	<%=label_tag("password")%>
+ 	<%=password_field_tag("password")%>
+ 	<%=submit_tag("submit")%>
+   
+ <% end -%>
 
 
 

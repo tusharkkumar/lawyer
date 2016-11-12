@@ -1,7 +1,6 @@
 class AcessController < ApplicationController
   def index
-  	@username=params[:username]
-  	@password=params[:password]
+  
 
 
    #admin panel page 
@@ -10,24 +9,28 @@ class AcessController < ApplicationController
 
   def login
   	# login page
+
   
-   end
+  end
 
   def loginattempt
-  	@username=params[:User][:username]
+  	@username=params[:username]
   	@password=params[:password]
-    byebug
+
     
+
+
     @user=User.where(:username=>@username).first
     if @user
       @authen=@user.authenticate(@password)
       if @authen
-        redirect_to :action=>"index"
+        
+      redirect_to :controller=>"acess",:action=>"index"    
+
+
       end
     else
-      @msg="Invalid Username or Password combination"
-      render "login"
-
+      render :controller=>"acess",:action=>"index"    
     end
   	
   end

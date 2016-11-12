@@ -50,13 +50,29 @@ class LawyerController < ApplicationController
 
 
   def login
+
     
   end
 
   def loginuser
+    @username=params[:username] 
+    @password=params[:password] 
+     
+
+    @user=User.where(:username=>@username).first
+    byebug
+    if @user
+      @authen=@user.authenticate(@password)
+      
+      if @authen
+      redirect_to :controller=>"user",:action=>"profile"    
 
 
-
+      end
+    else
+      redirect_to :controller=>"lawyer",:action=>"login"    
+    end
+  
   end
 
   #--------------------------------- homepage-----------------------------------#
