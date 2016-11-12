@@ -1,49 +1,40 @@
 <html>
-X-UA-Compatible<head>
+<head>
 	<title>LOGIN PAGE</title>
-	<meta charset="utf-8 " >
-    <meta http-equi="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>	
 
+
+<body>
 
 	<div class="container">
-
 		<div class="header">
-			<h1 style="color:#d5640c">LOGIN PAGE</h1>
-
+			<h1>LOGIN PAGE</h1>
 		</div>
 
-		<div class="center">
-			<div id="loginform">
-				<%=form_for(:UserAuthenticate,:url=>{:controller=>"lawyer",:action=>"insert"})do |f|%>
-				<h4 id="text">  <%= f.label("USERNAME")%><h4/>
-				  <%= f.text_field("lusername")%><br>
-				<h4 id="text">  <%= f.label("PASSWORD")%><h4/>
-				  <%= f.text_field("lpassword")%><br>
-				  <br>
-				  <%= submit_tag("Login")%>
+		<div id="form_login">
 
+			<!-- LOGIN FORM -->
 
-				<% end -%>
-
-
-			</div>
-
+	<%=form_for(:User,:url=>{:controller=>"lawyer",:action=>"loginuser"}) do |f| -%>
+		<ul>
+			<li>Username</li>
+			<li><%=f.text_field("username")%></li>
+		</ul>
+		<ul>
+			<li>Password</li>
+			<li><%=password_field_tag("password")%></li><br><br>
+			<li><%=submit_tag("Submit")%></li>	
+		</ul>
+	<% end -%>
 		</div>
 
-		<div class="page-footer">
-
-		</div>
 	</div>
 
 
 
+	<div>
 
-
-
-
+	</div>
 
 </body>
 </html>

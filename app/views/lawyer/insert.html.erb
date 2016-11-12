@@ -1,2 +1,8 @@
-<h1>Lawyer#insert</h1>
-<p>Find me in app/views/lawyer/insert.html.erb</p>
+<div id="form" >
+
+		<%=form_for(:User,:url=>{:controller=>"lawyer",:action=>"insert"}) do |f| -%>
+		  <%=render(:partial=>"form",:locals=>{:f=>f})%>
+		  <%=submit_tag("submit")%>
+		<% end -%>
+
+</div>

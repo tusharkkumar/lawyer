@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>  
-    <meta charset="utf-8 " >
-    <meta http-equi="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <script>
-    </script>
-    <title>LAWYER CHOICE</title>
-</head>
 
 
-<body>
+
     <div class="container">
         <div class="header">
            <p class="title">LAWYER'S CHOICE<p>
@@ -19,7 +8,7 @@
         </div>
         <div class="databody">
 
-            <div class="leftsection">
+            <div class="leftsection animated rollIn">
                 <ul >
                     <li><a  id="link1" >MENU</a></li><br><br>
                     <li><a  id="link2">LAW</a></li><br><br>
@@ -29,10 +18,32 @@
             </div>
             <div>
                 <div  id="div1" class="rightsection">
-                    hey1
+                    <h1 >Law Helper</h1>
+                    <div id="options" style="postion:relitive;">
+                        <ul>
+                            <li><%=link_to('LOGIN',{:controller=>"lawyer",:action=>"login"})%></li>
+                            <li><%=link_to('SIGNUP',{:controller=>"lawyer",:action=>"signup"})%></a></li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="rightsection" id="div2">
-                    hey2
+                    <h1 >LAW</h1>
+                    <div id="law">
+                        <ol>
+                            <li>1.Criminal Law, focusing on the relationship between law and crime.</li><br><br><br>
+                            <li>2.Property Law, dealing with real property.</li><br><br><br>
+                            <li>3.Intellectual Property Law, dealing with intangible assets.</li><br><br><br>
+                            <li>4.Commercial Law, relating to all things involved with commerce.</li><br><br><br>
+                            <li>5.Environmental Law, focusing on the protection.</li><br><br><br>
+
+                            <li>6.Family Law, pertaining to family-related matters</li>
+
+
+                        </ol>
+
+
+                         
+                    </div>
                 </div>
                 <div class="rightsection" id="div3">
                     <h1 >About us</h1>
@@ -72,6 +83,3 @@
 
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-
-</body>
-</html>

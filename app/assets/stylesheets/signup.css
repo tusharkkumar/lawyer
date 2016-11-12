@@ -1,8 +1,41 @@
-#errors{
+#form_signup{
 
-	position: relative;
-	top:300;
-	left:700;
+	position: absolute;
+	left:500px;
+	top:18	0px;
+	border:1px solid black;
+	width: 500px;
+	height: 400px;
+	padding-top: 60px;
+
+	background-color: #000;
+	border-radius:20px; 
+
+	box-shadow: 20px -10px 2px 0px #fff;
+
+
+
+}
+
+#errors{
+	position: absolute;
+	top:50px;
+	left:400px;
+
+}
+
+#error_msg{
 	color: #fff;
+
+
+}
+
+
+#nomatch{
+	position: absolute;
+	top:1px;
+	left:1px;
+
+
 
 }
