@@ -2,6 +2,7 @@ class LawyerController < ApplicationController
 
   
     #--------------------------------- signup-----------------------------------#
+  before_action :confirm_identity,:except=>[:login,:loginuser,:logout]
 
 
   def signup
@@ -55,24 +56,42 @@ class LawyerController < ApplicationController
   end
 
   def loginuser
-    @username=params[:username] 
-    @password=params[:password] 
+    @username=params[:username]
+    
+
      
 
     @user=User.where(:username=>@username).first
-    byebug
-    if @user
-      @authen=@user.authenticate(@password)
-      
-      if @authen
-      redirect_to :controller=>"user",:action=>"profile"    
+
+    if @user && params[:password].present? 
+        @authen=@user.authenticate(params[:password])
+          if @authen
+              session[:user_id]=@authen.id
+              session[:username]=@authen.username
+              flash[:name]="#{@authen.username.upcase}"
+              redirect_to :controller=>"user",:action=>"profile"    
+          else
+            flash[:notice]="Invalid Password..."
+            redirect_to :controller=>"lawyer",:action=>"login"    
 
 
-      end
+          end
+    
+
     else
+      flash[:notice]="Invalid Username and Password combination."
       redirect_to :controller=>"lawyer",:action=>"login"    
     end
   
+  end
+
+  #--------------------------------- logout-----------------------------------#
+
+  def logout
+     session[:user_id]=nil
+     session[:username]=nil
+     flash[:logout]="LOGOUT SUCCESSFUL..."
+     redirect_to :controller=>"lawyer",:action=>"login"    
   end
 
   #--------------------------------- homepage-----------------------------------#
@@ -98,10 +117,26 @@ class LawyerController < ApplicationController
 
   end
 
+  #--------------------------------- private methods-----------------------------------#
+
+
   private
 
   def attr_params
     params.require(:User).permit(:username,:password)
+    
+  end
+
+
+  def confirm_identity
+      if session[:user_id]
+         return true
+      else
+        flash[:notice]="Please Log In"
+        redirect_to :controller=>"lawyer",:action=>"login"
+        return false
+
+      end
     
   end
 

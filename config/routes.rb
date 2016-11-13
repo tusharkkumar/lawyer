@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+
   get 'acess/index'
 
   get 'acess/login'

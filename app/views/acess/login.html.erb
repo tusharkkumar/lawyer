@@ -1,6 +1,6 @@
 
 <div id="form">
-
+	<%=flash[:notice]%>
 
  <%=form_for(:User,:url=>{:controller=>"acess",:action=>"loginattempt"}) do  -%>
  	<%=label_tag("username")%>

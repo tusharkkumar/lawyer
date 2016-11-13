@@ -9,6 +9,8 @@
 		
 		<h1>WELCOME TO THE ADMIN PANEL</h1>
 
+		<%=flash[:notice]%>
+
 		<div id="options">
 			<h1>MANAGES</h1>
 
@@ -18,6 +20,8 @@
 			<%=link_to("update user",{:controller=>"lawyer",:action=>"delete"})%><br><br>
 			<strong>DELETE</strong>
 			<%=link_to("Delete User",{:controller=>"lawyer",:action=>"delete"})%><br><br>
+			<strong>logout</strong>
+			<%=link_to("logout",{:controller=>"acess",:action=>"logout"})%><br><br>
 
 
 		</div>

@@ -1,10 +1,13 @@
 
 
 <div class="container">
+	<div id="logout" >
+		<h3><%=link_to("Logout",:controller=>"lawyer",:action=>"logout")%></h3>
+	</div>
 
 	<div class="topsection">
 		<div class="header">
-			<h1 class="user animated lightSpeedIn ">Welcome User</h1>
+			<h1 class="user animated lightSpeedIn ">WELCOME <%=flash[:name]%></h1>
 
 		</div>
 

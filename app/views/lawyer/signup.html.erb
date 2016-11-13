@@ -41,26 +41,26 @@
 
 			<!-- signup FORM -->
 
-	<%=form_for(:User,:url=>{:controller=>"lawyer",:action=>"signupuser"}) do |f| -%>
-		<ul>
-			<li>Username</li>
-			<li><%=f.text_field("username")%></li>
-		</ul>
-		<ul>
-			<li>Password</li>
-			<li><%=f.text_field("password")%></li><br>
+				<%=form_for(:User,:url=>{:controller=>"lawyer",:action=>"signupuser"}) do |f| -%>
+					<ul>
+						<li>Username</li>
+						<li><%=f.text_field("username")%></li>
+					</ul>
+					<ul>
+						<li>Password</li>
+						<li><%=f.text_field("password")%></li><br>
 
-		</ul>
-		<ul>
-			<li>Confirm Password</li>
-			<li><%=f.text_field("confirmpassword")%></li><br><br>
-			<li><%=submit_tag("Submit")%></li>
-				
-		</ul>
+					</ul>
+					<ul>
+						<li>Confirm Password</li>
+						<li><%=f.text_field("confirmpassword")%></li><br><br>
+						<li><%=submit_tag("Submit")%></li>
+							
+					</ul>
 
 
 
-	<% end -%>
+				<% end -%>
 		</div>
 
 	</div>
