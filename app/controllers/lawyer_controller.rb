@@ -2,7 +2,7 @@ class LawyerController < ApplicationController
 
   
     #--------------------------------- signup-----------------------------------#
-  before_action :confirm_identity,:except=>[:login,:loginuser,:logout]
+  before_action :confirm_identity,:except=>[:login,:loginuser,:logout,:homepage]
 
 
   def signup
@@ -57,7 +57,7 @@ class LawyerController < ApplicationController
 
   def loginuser
     @username=params[:username]
-    
+      
 
      
 
